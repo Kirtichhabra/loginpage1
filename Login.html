@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page </title>
+    <style>
+    body {
+        font-family: "Lucida Console", monospace;
+        background-image : url("C:/Users/Testbook/Downloads/Background image.jpg");
+        text-align: center;
+        
+    }
+    .curved-box {
+        overflow: hidden;
+            width: 100%;
+            height: 50%;
+            font-size: 24px;
+            border-radius: 10px; /* Add border-radius here */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+            padding: 20px; /* Add padding for content */
+            box-sizing: border-box;
+            margin: 20px auto;
+            max-width: 400px;
+}
+
+    form {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+    input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            color: #555; /* Text color */
+        }
+
+        input[type="text"]::placeholder,
+        input[type="password"]::placeholder{
+            color:#ccc;
+        }
+
+    textarea {
+        resize: vertical; /* Allow vertical resizing of the textarea */
+    }
+
+    input[type="Login"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    #message {
+            color: red;
+        }
+
+</style>
+
+    </head>
+    <body>
+
+        <h2> Log In </h2>
+        <form action="#" method="post">
+            <div class="curved-box>"
+            <label for="UserName">UserName:</label>
+            <input type="text" id="userName" placeholder="Enter the userName">
+            <br>
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password"  placeholder = "Enter the Password" required>
+            <br>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+        <a href="#">No Account?</a>
+        <a href="#">SignUp    </a>
+
+        <script>
+            function validateForm() {
+                var username = document.getElementById("userName").value;
+                var password = document.getElementById("password").value;
+    
+                var messageElement = document.getElementById("message");
+                var successMessageElement = document.getElementById("successMessage");
+    
+                if (username.trim() === "" || password.trim() === "") {
+                    messageElement.textContent = "Please enter both username and password.";
+                    successMessageElement.textContent = "";
+                    return false;
+                } else {
+                    messageElement.textContent = "";
+                    successMessageElement.textContent = "Login successful! Username: " + username + ", Password: " + password;
+                    return false; // prevent form submission for this example
+                }
+            }
+        </script>
+    </body>
+    </html>
